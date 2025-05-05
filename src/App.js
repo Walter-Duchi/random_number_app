@@ -1,17 +1,15 @@
+import { useState } from "react";
 import "./App.css";
-import Card from "./Card";
-
-const randNum = () => Math.ceil(Math.random() * 100);
 
 function App() {
+  const [num, setNum] = useState(0);
+
   return (
-    <div>
-      <h1>Task: Add three Card elements</h1>
-      <Card num={randNum()} />
-      <Card num={randNum()} />
-      <Card num={randNum()} />
-      <h1>{}</h1>
-    </div>
+    <>
+      <h1>Current number: {num}</h1>
+      <button onClick={() => setNum(num + 1)}>Add me</button>
+      <button onClick={() => setNum(num - 1)}>Substract 1</button>
+    </>
   );
 }
 
